@@ -14,6 +14,10 @@ import {
   getFirestore,
 } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
 
+
+if (!sessionStorage.getItem("user")) {
+  window.location.replace("login.html");
+}
 // First verify we have access to the database
 console.log("Database initialized:", db);
 

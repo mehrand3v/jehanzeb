@@ -5,14 +5,28 @@ const USERS = [
 ];
 
 // Check if user is already logged in
+// auth.js
+
+// checkAuth function
+
 function checkAuth() {
     const user = sessionStorage.getItem('user');
-    if (user && window.location.pathname.includes('login.html')) {
-        window.location.href = 'index.html';
-    } else if (!user && !window.location.pathname.includes('login.html')) {
-        window.location.href = 'login.html';
+    const isLoginPage = window.location.pathname.endsWith('login.html');
+
+    if (!user && !isLoginPage) {
+        // No user logged in and not on login page - redirect to login
+        window.location.replace('login.html');
+        return false;
+    } else if (user && isLoginPage) {
+        // User is logged in but on login page - redirect to index
+        window.location.replace('index.html');
+        return false;
     }
+    return true;
 }
+
+// Make sure this runs when page loads
+document.addEventListener('DOMContentLoaded', checkAuth);
 
 // Handle login form submission
 document.getElementById('loginForm')?.addEventListener('submit', (e) => {

@@ -267,3 +267,24 @@ body {
 .mt-4 {
     margin-top: 1rem;
 }
+/* logout code */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.logout-btn:hover {
+    opacity: 0.8;
+}
+/* ends logout css */

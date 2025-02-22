@@ -18,7 +18,24 @@
             </button> -->
         </div>
     </nav>
-
+<script>
+    const user = JSON.parse(sessionStorage.getItem('user'));
+    if (user) {
+        document.querySelector('.navbar-content').innerHTML += `
+            <div class="user-info">
+                <span>${user.username}</span>
+                <button onclick="logout()" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        `;
+        // Add event listener after creating the button
+        document.querySelector('.logout-btn').addEventListener('click', () => {
+            sessionStorage.removeItem('user');
+            window.location.href = 'login.html';
+        });
+    }
+</script>
     <div class="container">
         <div class="card">
             <h2>Inventory Status</h2>

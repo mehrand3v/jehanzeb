@@ -1,0 +1,269 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1d4ed8;
+    --background-color: #f3f4f6;
+    --card-background: #ffffff;
+    --text-color: #1f2937;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding-bottom: 60px;
+    /* Space for bottom nav */
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Cards */
+.card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 1rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-secondary {
+    background-color: #e5e7eb;
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background-color: #d1d5db;
+}
+
+/* Customer List */
+.customer-list {
+    margin-top: 1rem;
+}
+
+.customer-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.customer-card:hover {
+    background-color: #f9fafb;
+}
+
+.customer-card:last-child {
+    border-bottom: none;
+}
+
+.customer-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.customer-info p {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.customer-balance {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0.5rem;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
+    color: #6b7280;
+    font-size: 0.75rem;
+    padding: 0.5rem 0;
+    transition: color 0.2s;
+}
+
+.nav-item i {
+    font-size: 1.25rem;
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+}
+
+/* Floating Action Button */
+.fab-button {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    z-index: 98;
+}
+
+.fab-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.fab-button:active {
+    transform: scale(0.95);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .container {
+        padding: 0.75rem;
+    }
+
+    .stats-grid {
+        gap: 0.75rem;
+    }
+
+    .stat-value {
+        font-size: 1.25rem;
+    }
+
+    .action-buttons {
+        gap: 0.75rem;
+    }
+
+    .btn {
+        padding: 0.625rem;
+    }
+}
+
+/* Helper classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 {
+    margin-top: 0.25rem;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}

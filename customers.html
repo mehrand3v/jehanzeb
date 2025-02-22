@@ -1,0 +1,79 @@
+<!-- customers.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers - LPG Tracker System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content container">
+            <h1>LPG Tracker</h1>
+            <div class="user-info">
+                <!-- User info will be inserted by auth.js -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="customers-header">
+            <h2>Customers</h2>
+            <button class="btn btn-secondary">
+                <i class="fas fa-user-plus"></i>
+                Add Customer
+            </button>
+        </div>
+
+        <div class="search-bar">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="customerSearch" placeholder="Search customers...">
+        </div>
+
+        <div id="customerListContainer"></div>
+
+        <div class="pagination">
+            <button id="prevPage" class="pagination-btn">
+                <i class="fas fa-chevron-left"></i> Previous
+            </button>
+            <span id="pageInfo">Page 1</span>
+            <button id="nextPage" class="pagination-btn">
+                Next <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Add Customer Modal -->
+    <div class="modal" id="addCustomerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Customer</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form id="customerForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Add Customer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script type="module" src="customers.js"></script>
+</body>
+</html>

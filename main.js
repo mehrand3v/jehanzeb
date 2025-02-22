@@ -194,11 +194,7 @@ function setupEventListeners() {
     alert("New Transaction feature coming soon!");
   });
 
-  // Add Customer button
-  elements.addCustomerBtn?.addEventListener("click", () => {
-    console.log("Add customer clicked");
-    alert("Add Customer feature coming soon!");
-  });
+
 
   // FAB button
   elements.fabButton?.addEventListener("click", () => {
@@ -207,16 +203,16 @@ function setupEventListeners() {
   });
 
   // Bottom navigation
-  elements.bottomNavItems.forEach((item) => {
-    item?.addEventListener("click", (e) => {
-      e.preventDefault();
-      console.log(
-        "Navigation clicked:",
-        e.currentTarget.querySelector("span")?.textContent
-      );
-      alert("Navigation feature coming soon!");
-    });
-  });
+  // elements.bottomNavItems.forEach((item) => {
+  //   item?.addEventListener("click", (e) => {
+  //     e.preventDefault();
+  //     console.log(
+  //       "Navigation clicked:",
+  //       e.currentTarget.querySelector("span")?.textContent
+  //     );
+  //     alert("Navigation feature coming soon!");
+  //   });
+  // });
 
   // Customer card clicks
   elements.customerList?.addEventListener("click", (e) => {
